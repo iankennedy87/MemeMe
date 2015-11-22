@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		0069CAB11C001D4500E6476C /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069CAB01C001D4500E6476C /* MemeMeTests.swift */; };
 		0069CABC1C001D4500E6476C /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069CABB1C001D4500E6476C /* MemeMeUITests.swift */; };
-		0069CACD1C001D8A00E6476C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069CAC91C001D8A00E6476C /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		0069CADF1C001EAD00E6476C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0069CADB1C001EAD00E6476C /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		0069CAE01C001EAD00E6476C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069CADC1C001EAD00E6476C /* Model.swift */; settings = {ASSET_TAGS = (); }; };
 		0069CAE11C001EAD00E6476C /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069CADD1C001EAD00E6476C /* TextFieldDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		0069CAE21C001EAD00E6476C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069CADE1C001EAD00E6476C /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		0069CAE71C001EB600E6476C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0069CAE31C001EB600E6476C /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		0069CAE81C001EB600E6476C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0069CAE51C001EB600E6476C /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		00E08ECA1C017F8E009BA2A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E08EC91C017F8E009BA2A8 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		00E08ECC1C017FC4009BA2A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E08ECB1C017FC4009BA2A8 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +44,13 @@
 		0069CAB71C001D4500E6476C /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0069CABB1C001D4500E6476C /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		0069CABD1C001D4500E6476C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0069CAC91C001D8A00E6476C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../Image Picker/MemeMe/AppDelegate.swift"; sourceTree = "<group>"; };
-		0069CADB1C001EAD00E6476C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0069CADC1C001EAD00E6476C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0069CADD1C001EAD00E6476C /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		0069CADE1C001EAD00E6476C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0069CAE41C001EB600E6476C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0069CAE61C001EB600E6476C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00E08EC91C017F8E009BA2A8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00E08ECB1C017FC4009BA2A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +101,13 @@
 		0069CA9A1C001D4500E6476C /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				00E08ECB1C017FC4009BA2A8 /* Assets.xcassets */,
+				00E08EC91C017F8E009BA2A8 /* AppDelegate.swift */,
 				0069CAE31C001EB600E6476C /* LaunchScreen.storyboard */,
 				0069CAE51C001EB600E6476C /* Main.storyboard */,
-				0069CADB1C001EAD00E6476C /* Assets.xcassets */,
 				0069CADC1C001EAD00E6476C /* Model.swift */,
 				0069CADD1C001EAD00E6476C /* TextFieldDelegate.swift */,
 				0069CADE1C001EAD00E6476C /* ViewController.swift */,
-				0069CAC91C001D8A00E6476C /* AppDelegate.swift */,
 				0069CAA71C001D4500E6476C /* Info.plist */,
 			);
 			path = MemeMe;
@@ -235,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0069CAE81C001EB600E6476C /* Main.storyboard in Resources */,
-				0069CADF1C001EAD00E6476C /* Assets.xcassets in Resources */,
+				00E08ECC1C017FC4009BA2A8 /* Assets.xcassets in Resources */,
 				0069CAE71C001EB600E6476C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0069CACD1C001D8A00E6476C /* AppDelegate.swift in Sources */,
+				00E08ECA1C017F8E009BA2A8 /* AppDelegate.swift in Sources */,
 				0069CAE01C001EAD00E6476C /* Model.swift in Sources */,
 				0069CAE21C001EAD00E6476C /* ViewController.swift in Sources */,
 				0069CAE11C001EAD00E6476C /* TextFieldDelegate.swift in Sources */,
@@ -489,6 +489,7 @@
 				0069CAC21C001D4500E6476C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0069CAC31C001D4500E6476C /* Build configuration list for PBXNativeTarget "MemeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +498,7 @@
 				0069CAC51C001D4500E6476C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0069CAC61C001D4500E6476C /* Build configuration list for PBXNativeTarget "MemeMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +507,7 @@
 				0069CAC81C001D4500E6476C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
