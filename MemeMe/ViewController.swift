@@ -150,7 +150,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             shareButton.enabled = true
             
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -186,6 +186,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save() {
         //Create the meme
         let meme = Meme(topText : topTextField.text!, bottomText : bottomTextField.text!, originalImage: pickerImageView.image!, memedImage: memedImage)
+        
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage
@@ -195,7 +199,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //generate image
         UIGraphicsBeginImageContext(view.frame.size)
-        self.view.drawViewHierarchyInRect(view.frame,
+        view.drawViewHierarchyInRect(view.frame,
             afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
