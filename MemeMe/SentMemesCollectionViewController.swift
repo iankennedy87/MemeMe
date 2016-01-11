@@ -1,5 +1,5 @@
 //
-//  SentMemesTableViewController.swift
+//  SentMemesCollectionViewController.swift
 //  MemeMe
 //
 //  Created by Ian Kennedy on 1/10/16.
@@ -8,7 +8,10 @@
 
 import UIKit
 
-class SentMemesTableViewController: UITableViewController {
+class SentMemesCollectionViewController: UICollectionViewController {
+    
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
@@ -17,10 +20,18 @@ class SentMemesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "plusButtonClicked:"), animated: false)
+        
+        let space: CGFloat = 3.0
+        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        //TODO: Implement flowLayout here.
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
     }
     
     override func viewWillAppear(animated: Bool) {
-        tableView!.reloadData()
+        super.viewWillAppear(animated)
+        collectionView?.reloadData()
     }
     
     func plusButtonClicked(sender: UIBarButtonItem) {
@@ -28,32 +39,26 @@ class SentMemesTableViewController: UITableViewController {
         navigationController?.pushViewController(editorController, animated: true)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("SentMemeCell")!
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionViewCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         let meme = memes[indexPath.row]
         
-        // Set the name and image
-        cell.textLabel?.text = meme.topText + " " + meme.bottomText
-        cell.imageView?.image = meme.memedImage
+        // Set the image
 
-        
-// 
-//        if let detailTextLabel = cell.detailTextLabel {
-//            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
-//        }
+        cell.memeImageView?.image = meme.memedImage
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
+    {
         
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-        
         detailController.meme = memes[indexPath.row]
         navigationController!.pushViewController(detailController, animated: true)
         
