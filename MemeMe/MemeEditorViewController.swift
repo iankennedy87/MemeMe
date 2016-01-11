@@ -132,6 +132,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        textField.autocorrectionType = UITextAutocorrectionType.No
         if topTextIsDefault {
             textField.text = ""
             topTextIsDefault = false

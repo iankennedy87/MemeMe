@@ -25,16 +25,16 @@
         <scene sceneID="xwC-GK-aZC">
             <objects>
                 <tableViewController id="xg4-mR-qU1" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dK7-fF-j6z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="dK7-fF-j6z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeCell" id="XaW-am-ang">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SentMemeCell" rowHeight="100" id="XaW-am-ang">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XaW-am-ang" id="orV-lP-kzD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -49,6 +49,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-2V-YhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-726" y="336.75"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="3eN-WN-j1s">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="Arj-u7-b55" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bDR-EA-jSw"/>
+                        <viewControllerLayoutGuide type="bottom" id="hXl-eV-dfQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RUU-dm-MGU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-k9-egl">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hXl-eV-dfQ" firstAttribute="top" secondItem="slZ-k9-egl" secondAttribute="bottom" id="Lk9-X5-79T"/>
+                            <constraint firstItem="slZ-k9-egl" firstAttribute="top" secondItem="bDR-EA-jSw" secondAttribute="bottom" id="Lmn-6q-Qv5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="slZ-k9-egl" secondAttribute="trailing" constant="-20" id="R4q-ck-Ca6"/>
+                            <constraint firstItem="slZ-k9-egl" firstAttribute="leading" secondItem="RUU-dm-MGU" secondAttribute="leadingMargin" constant="-20" id="umM-zT-D7v"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="slZ-k9-egl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Lk9-X5-79T"/>
+                                <exclude reference="Lmn-6q-Qv5"/>
+                                <exclude reference="R4q-ck-Ca6"/>
+                                <exclude reference="umM-zT-D7v"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="slZ-k9-egl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Lk9-X5-79T"/>
+                                <include reference="Lmn-6q-Qv5"/>
+                                <include reference="R4q-ck-Ca6"/>
+                                <include reference="umM-zT-D7v"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="slZ-k9-egl" id="6Zg-i5-Ifq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Bu-dr-C9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="-363"/>
         </scene>
         <!--Meme Editor-->
         <scene sceneID="tne-QT-ifu">

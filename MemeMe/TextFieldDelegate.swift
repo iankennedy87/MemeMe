@@ -14,6 +14,7 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     var textIsDefault: Bool = true
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        textField.autocorrectionType = UITextAutocorrectionType.No
         if textIsDefault {
             textField.text = ""
             textIsDefault = false

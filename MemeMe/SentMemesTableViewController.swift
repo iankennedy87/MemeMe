@@ -49,11 +49,14 @@ class SentMemesTableViewController: UITableViewController {
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("VillainDetailViewController") as! VillainDetailViewController
-//        detailController.villain = self.allVillains[indexPath.row]
-//        self.navigationController!.pushViewController(detailController, animated: true)
-//        
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        
+        print(memes[indexPath.row].topText)
+        
+        detailController.meme = memes[indexPath.row]
+        navigationController!.pushViewController(detailController, animated: true)
+        
+    }
 }
