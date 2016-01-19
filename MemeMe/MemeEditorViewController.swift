@@ -43,11 +43,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.tabBar.hidden = true
+        navigationController?.navigationBarHidden = true
+        
         shareButton.enabled = false
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
         
         prepareTextFields()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -101,6 +108,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerImageView.image = nil
         
         prepareTextFields()
+
+        navigationController?.popToRootViewControllerAnimated(true)
+        tabBarController?.tabBar.hidden = false
+        navigationController?.navigationBarHidden = false
     }
     
     
