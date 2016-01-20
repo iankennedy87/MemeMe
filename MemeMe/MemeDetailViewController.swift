@@ -14,9 +14,17 @@ class MemeDetailViewController: UIViewController {
 
     @IBOutlet weak var memeImageView: UIImageView!
     
+    override func viewDidLoad() {
+        navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editMeme:"), animated: false)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         memeImageView.image = meme.memedImage
+    }
+    
+    func editMeme(sender: UIBarButtonItem) {
+        print("Edit button pressed")
     }
     
 }

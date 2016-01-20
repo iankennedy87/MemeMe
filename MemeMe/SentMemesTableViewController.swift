@@ -17,6 +17,7 @@ class SentMemesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "plusButtonClicked:"), animated: false)
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -26,6 +27,10 @@ class SentMemesTableViewController: UITableViewController {
     func plusButtonClicked(sender: UIBarButtonItem) {
         let editorController = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         navigationController?.pushViewController(editorController, animated: true)
+    }
+    
+    func handleRightSwipe(sender: UISwipeGestureRecognizer) {
+        print("Right swipe detected")
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,11 +47,7 @@ class SentMemesTableViewController: UITableViewController {
         cell.imageView?.contentMode = .ScaleAspectFill
         cell.imageView?.image = meme.memedImage
 
-        
-// 
-//        if let detailTextLabel = cell.detailTextLabel {
-//            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
-//        }
+
         
         return cell
     }
@@ -58,5 +59,17 @@ class SentMemesTableViewController: UITableViewController {
         detailController.meme = memes[indexPath.row]
         navigationController!.pushViewController(detailController, animated: true)
         
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            (UIApplication.sharedApplication().delegate as! AppDelegate).memes.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
     }
 }

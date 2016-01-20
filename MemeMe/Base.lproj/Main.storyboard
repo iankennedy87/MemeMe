@@ -68,26 +68,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i3a-xY-qTo">
-                            <size key="itemSize" width="155" height="155"/>
+                            <size key="itemSize" width="194" height="155"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="xEA-uW-oMz" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="155" height="155"/>
+                                <rect key="frame" x="0.0" y="64" width="194" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="194" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-dX-3ks">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-dX-3ks">
+                                            <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="25V-RI-Bn4"/>
+                                                <constraint firstAttribute="height" constant="80" id="F5m-lK-j3T"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="155" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="iiE-dX-3ks" secondAttribute="bottom" id="6d9-9p-4Pl"/>
+                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="centerX" secondItem="xEA-uW-oMz" secondAttribute="centerX" id="9WB-MF-1ff"/>
+                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="top" secondItem="xEA-uW-oMz" secondAttribute="topMargin" id="FqI-wM-VAG"/>
+                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="centerY" secondItem="xEA-uW-oMz" secondAttribute="centerY" id="LJ1-vB-VSy"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="iiE-dX-3ks" secondAttribute="trailing" id="LRg-oa-4Oh"/>
+                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="leading" secondItem="xEA-uW-oMz" secondAttribute="leadingMargin" id="SrP-vE-5gf"/>
+                                </constraints>
+                                <size key="customSize" width="194" height="155"/>
                                 <connections>
                                     <outlet property="memeImageView" destination="iiE-dX-3ks" id="xXR-If-v0t"/>
                                 </connections>
