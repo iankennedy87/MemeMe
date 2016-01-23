@@ -30,6 +30,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
     }
     
+    //Refresh collection view layout after rotation
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
         setFlowLayoutParameters()
     }
@@ -39,6 +40,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         navigationController?.pushViewController(editorController, animated: true)
     }
     
+    //Set flow layout for portrait and landscape views
     func setFlowLayoutParameters() {
         var dimension: CGFloat
         let space: CGFloat = 3.0

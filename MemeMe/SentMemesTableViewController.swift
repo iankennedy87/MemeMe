@@ -14,6 +14,7 @@ class SentMemesTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
+    //Add button on nav bar
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "plusButtonClicked:"), animated: false)
@@ -32,9 +33,6 @@ class SentMemesTableViewController: UITableViewController {
         navigationController?.pushViewController(editorController, animated: true)
     }
     
-    func handleRightSwipe(sender: UISwipeGestureRecognizer) {
-        print("Right swipe detected")
-    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
@@ -49,8 +47,6 @@ class SentMemesTableViewController: UITableViewController {
         cell.textLabel?.text = meme.topText + " " + meme.bottomText
         cell.imageView?.contentMode = .ScaleAspectFill
         cell.imageView?.image = meme.memedImage
-        cell.indentationWidth = -20.0
-        cell.indentationLevel = 1
 
         return cell
     }
@@ -64,8 +60,8 @@ class SentMemesTableViewController: UITableViewController {
         
     }
     
+    //Implement right to left swipe to delete meme
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // the cells you would like the actions to appear needs to be editable
         return true
     }
     
