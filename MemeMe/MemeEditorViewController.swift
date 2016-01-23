@@ -40,6 +40,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     var topTextIsDefault: Bool = true
     
+    var isFromDetailView: Bool = false
+    
+    var meme: Meme!
+    
+    var testVariable: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +67,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewWillAppear(animated)
         tabBarController?.tabBar.hidden = true
         navigationController?.navigationBarHidden = true
-
+        if isFromDetailView {
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+            pickerImageView.image = meme.originalImage
+            isFromDetailView = false
+        }
         subscribeToKeyboardNotifications()
     }
     

@@ -21,51 +21,17 @@ class SentMemesCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "plusButtonClicked:"), animated: false)
         setFlowLayoutParameters()
-//        switch UIDevice.currentDevice().orientation {
-//        case .Portrait, .PortraitUpsideDown:
-//            let space: CGFloat = 3.0
-//            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-//            //TODO: Implement flowLayout here.
-//            flowLayout.minimumLineSpacing = space
-//            flowLayout.minimumInteritemSpacing = space
-//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
-//        case .LandscapeLeft, .LandscapeRight:
-//            let space: CGFloat = 3.0
-//            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
-//            //TODO: Implement flowLayout here.
-//            flowLayout.minimumLineSpacing = space
-//            flowLayout.minimumInteritemSpacing = space
-//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
-//        default:
-//            break
-//        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.hidden = false
+        navigationController?.navigationBarHidden = false
         collectionView?.reloadData()
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
         setFlowLayoutParameters()
-//        switch UIDevice.currentDevice().orientation {
-//        case .Portrait, .PortraitUpsideDown:
-//            let space: CGFloat = 3.0
-//            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-//            //TODO: Implement flowLayout here.
-//            flowLayout.minimumLineSpacing = space
-//            flowLayout.minimumInteritemSpacing = space
-//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
-//        case .LandscapeLeft, .LandscapeRight:
-//            let space: CGFloat = 3.0
-//            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
-//            //TODO: Implement flowLayout here.
-//            flowLayout.minimumLineSpacing = space
-//            flowLayout.minimumInteritemSpacing = space
-//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
-//        default:
-//            break
-//        }
     }
     
     func plusButtonClicked(sender: UIBarButtonItem) {
@@ -74,24 +40,21 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     func setFlowLayoutParameters() {
+        var dimension: CGFloat
+        let space: CGFloat = 3.0
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        
         switch UIDevice.currentDevice().orientation {
         case .Portrait, .PortraitUpsideDown:
-            let space: CGFloat = 3.0
-            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-            //TODO: Implement flowLayout here.
-            flowLayout.minimumLineSpacing = space
-            flowLayout.minimumInteritemSpacing = space
-            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+            
+            dimension = (self.view.frame.size.width - (2 * space)) / 3.0
         case .LandscapeLeft, .LandscapeRight:
-            let space: CGFloat = 3.0
-            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
-            //TODO: Implement flowLayout here.
-            flowLayout.minimumLineSpacing = space
-            flowLayout.minimumInteritemSpacing = space
-            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+            dimension = (self.view.frame.size.width - (4 * space)) / 5.0
         default:
-            break
+            dimension = 1.0
         }
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

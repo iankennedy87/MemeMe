@@ -30,7 +30,14 @@ class MemeDetailViewController: UIViewController {
     }
     
     func editMeme(sender: UIBarButtonItem) {
-        print("Edit button pressed")
+        let editorController = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        
+        editorController.isFromDetailView = true
+        editorController.meme = meme
+        
+        navigationController?.pushViewController(editorController, animated: true)
+        
+
     }
     
 }

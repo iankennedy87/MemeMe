@@ -21,6 +21,9 @@ class SentMemesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.hidden = false
+        navigationController?.navigationBarHidden = false
         tableView!.reloadData()
     }
     

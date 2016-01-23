@@ -10,4 +10,9 @@ import UIKit
 
 class MemeTabBarController: UITabBarController {
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.hidden = false
+        navigationController?.navigationBarHidden = false
+    }
 }
