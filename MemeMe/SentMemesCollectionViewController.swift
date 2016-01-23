@@ -20,24 +20,25 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "plusButtonClicked:"), animated: false)
-        switch UIDevice.currentDevice().orientation {
-        case .Portrait, .PortraitUpsideDown:
-            let space: CGFloat = 3.0
-            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-            //TODO: Implement flowLayout here.
-            flowLayout.minimumLineSpacing = space
-            flowLayout.minimumInteritemSpacing = space
-            flowLayout.itemSize = CGSizeMake(dimension, dimension)
-        case .LandscapeLeft, .LandscapeRight:
-            let space: CGFloat = 3.0
-            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
-            //TODO: Implement flowLayout here.
-            flowLayout.minimumLineSpacing = space
-            flowLayout.minimumInteritemSpacing = space
-            flowLayout.itemSize = CGSizeMake(dimension, dimension)
-        default:
-            break
-        }
+        setFlowLayoutParameters()
+//        switch UIDevice.currentDevice().orientation {
+//        case .Portrait, .PortraitUpsideDown:
+//            let space: CGFloat = 3.0
+//            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+//            //TODO: Implement flowLayout here.
+//            flowLayout.minimumLineSpacing = space
+//            flowLayout.minimumInteritemSpacing = space
+//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+//        case .LandscapeLeft, .LandscapeRight:
+//            let space: CGFloat = 3.0
+//            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
+//            //TODO: Implement flowLayout here.
+//            flowLayout.minimumLineSpacing = space
+//            flowLayout.minimumInteritemSpacing = space
+//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+//        default:
+//            break
+//        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,6 +47,33 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        setFlowLayoutParameters()
+//        switch UIDevice.currentDevice().orientation {
+//        case .Portrait, .PortraitUpsideDown:
+//            let space: CGFloat = 3.0
+//            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+//            //TODO: Implement flowLayout here.
+//            flowLayout.minimumLineSpacing = space
+//            flowLayout.minimumInteritemSpacing = space
+//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+//        case .LandscapeLeft, .LandscapeRight:
+//            let space: CGFloat = 3.0
+//            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
+//            //TODO: Implement flowLayout here.
+//            flowLayout.minimumLineSpacing = space
+//            flowLayout.minimumInteritemSpacing = space
+//            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+//        default:
+//            break
+//        }
+    }
+    
+    func plusButtonClicked(sender: UIBarButtonItem) {
+        let editorController = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        navigationController?.pushViewController(editorController, animated: true)
+    }
+    
+    func setFlowLayoutParameters() {
         switch UIDevice.currentDevice().orientation {
         case .Portrait, .PortraitUpsideDown:
             let space: CGFloat = 3.0
@@ -64,11 +92,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         default:
             break
         }
-    }
-    
-    func plusButtonClicked(sender: UIBarButtonItem) {
-        let editorController = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
-        navigationController?.pushViewController(editorController, animated: true)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -81,23 +81,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="194" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-dX-3ks">
-                                            <rect key="frame" x="8" y="8" width="80" height="80"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="25V-RI-Bn4"/>
-                                                <constraint firstAttribute="height" constant="80" id="F5m-lK-j3T"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-dX-3ks">
+                                            <rect key="frame" x="8" y="8" width="186" height="147"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="iiE-dX-3ks" secondAttribute="bottom" id="6d9-9p-4Pl"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="iiE-dX-3ks" secondAttribute="bottom" constant="-8" id="6d9-9p-4Pl"/>
                                     <constraint firstItem="iiE-dX-3ks" firstAttribute="centerX" secondItem="xEA-uW-oMz" secondAttribute="centerX" id="9WB-MF-1ff"/>
-                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="top" secondItem="xEA-uW-oMz" secondAttribute="topMargin" id="FqI-wM-VAG"/>
+                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="top" secondItem="xEA-uW-oMz" secondAttribute="topMargin" constant="-8" id="FqI-wM-VAG"/>
                                     <constraint firstItem="iiE-dX-3ks" firstAttribute="centerY" secondItem="xEA-uW-oMz" secondAttribute="centerY" id="LJ1-vB-VSy"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="iiE-dX-3ks" secondAttribute="trailing" id="LRg-oa-4Oh"/>
-                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="leading" secondItem="xEA-uW-oMz" secondAttribute="leadingMargin" id="SrP-vE-5gf"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="iiE-dX-3ks" secondAttribute="trailing" constant="-8" id="LRg-oa-4Oh"/>
+                                    <constraint firstItem="iiE-dX-3ks" firstAttribute="leading" secondItem="xEA-uW-oMz" secondAttribute="leadingMargin" constant="-8" id="SrP-vE-5gf"/>
                                 </constraints>
                                 <size key="customSize" width="194" height="155"/>
                                 <connections>
