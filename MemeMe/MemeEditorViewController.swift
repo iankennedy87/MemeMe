@@ -43,8 +43,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBarController?.tabBar.hidden = true
-        navigationController?.navigationBarHidden = true
+//        tabBarController?.tabBar.hidden = true
+//        navigationController?.navigationBarHidden = true
         
         shareButton.enabled = false
         
@@ -59,11 +59,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.hidden = true
+        navigationController?.navigationBarHidden = true
+
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        tabBarController?.tabBar.hidden = false
+        navigationController?.navigationBarHidden = false
+
         unsubscribeFromKeyboardNotifications()
     }
 
@@ -110,8 +116,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         prepareTextFields()
 
         navigationController?.popToRootViewControllerAnimated(true)
-        tabBarController?.tabBar.hidden = false
-        navigationController?.navigationBarHidden = false
+//        tabBarController?.tabBar.hidden = false
+//        navigationController?.navigationBarHidden = false
     }
     
     

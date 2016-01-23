@@ -34,6 +34,15 @@ class SentMemesCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        let space: CGFloat = 3.0
+        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+        //TODO: Implement flowLayout here.
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+    }
+    
     func plusButtonClicked(sender: UIBarButtonItem) {
         let editorController = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         navigationController?.pushViewController(editorController, animated: true)
