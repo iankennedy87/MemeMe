@@ -20,13 +20,24 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "plusButtonClicked:"), animated: false)
-        
-        let space: CGFloat = 3.0
-        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-        //TODO: Implement flowLayout here.
-        flowLayout.minimumLineSpacing = space
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        switch UIDevice.currentDevice().orientation {
+        case .Portrait, .PortraitUpsideDown:
+            let space: CGFloat = 3.0
+            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+            //TODO: Implement flowLayout here.
+            flowLayout.minimumLineSpacing = space
+            flowLayout.minimumInteritemSpacing = space
+            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        case .LandscapeLeft, .LandscapeRight:
+            let space: CGFloat = 3.0
+            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
+            //TODO: Implement flowLayout here.
+            flowLayout.minimumLineSpacing = space
+            flowLayout.minimumInteritemSpacing = space
+            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        default:
+            break
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,12 +46,24 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        let space: CGFloat = 3.0
-        let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
-        //TODO: Implement flowLayout here.
-        flowLayout.minimumLineSpacing = space
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        switch UIDevice.currentDevice().orientation {
+        case .Portrait, .PortraitUpsideDown:
+            let space: CGFloat = 3.0
+            let dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+            //TODO: Implement flowLayout here.
+            flowLayout.minimumLineSpacing = space
+            flowLayout.minimumInteritemSpacing = space
+            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        case .LandscapeLeft, .LandscapeRight:
+            let space: CGFloat = 3.0
+            let dimension = (self.view.frame.size.width - (4 * space)) / 5.0
+            //TODO: Implement flowLayout here.
+            flowLayout.minimumLineSpacing = space
+            flowLayout.minimumInteritemSpacing = space
+            flowLayout.itemSize = CGSizeMake(dimension, dimension)
+        default:
+            break
+        }
     }
     
     func plusButtonClicked(sender: UIBarButtonItem) {
