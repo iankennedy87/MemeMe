@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Meme Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="I1j-DP-duR">
             <objects>
-                <tabBarController storyboardIdentifier="MemeTabBarController" id="0OH-p3-6sj" customClass="MemeTabBarController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MemeTabBarController" id="0OH-p3-6sj" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rwA-Pd-Cpm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

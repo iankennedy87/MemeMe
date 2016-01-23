@@ -49,15 +49,15 @@ class SentMemesTableViewController: UITableViewController {
         cell.textLabel?.text = meme.topText + " " + meme.bottomText
         cell.imageView?.contentMode = .ScaleAspectFill
         cell.imageView?.image = meme.memedImage
+        cell.indentationWidth = -20.0
+        cell.indentationLevel = 1
 
-
-        
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         detailController.meme = memes[indexPath.row]
         navigationController!.pushViewController(detailController, animated: true)

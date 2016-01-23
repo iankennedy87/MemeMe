@@ -48,9 +48,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
         switch UIDevice.currentDevice().orientation {
         case .Portrait, .PortraitUpsideDown:
             
-            dimension = (self.view.frame.size.width - (2 * space)) / 3.0
+            dimension = (view.frame.size.width - (2 * space)) / 3.0
         case .LandscapeLeft, .LandscapeRight:
-            dimension = (self.view.frame.size.width - (4 * space)) / 5.0
+            dimension = (view.frame.size.width - (4 * space)) / 5.0
         default:
             dimension = 1.0
         }
@@ -76,7 +76,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
         
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         detailController.meme = memes[indexPath.row]
         navigationController!.pushViewController(detailController, animated: true)
         
